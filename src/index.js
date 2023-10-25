@@ -1,7 +1,7 @@
 //Este mismo sera el encargado en inicializar nuestro servicio 
 //se encargara tanto de crear el servidor como de otras configuraciones 
 //necesarias para nuestra api-rest 
-import express from 'express';//importamos express(el servidor de la api-rest)
+import express from 'express';//importamos express(el servidor de la api-rest)//
 
 import morgan from 'morgan';//para poder ver las solicitudes de los clientes 
 
