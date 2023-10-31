@@ -32,7 +32,7 @@ class LibroController{
 		const libro = req.body;
 		const [result] = await pool.query(`INSERT INTO libros(nombre, autor, categoria, año, ISBN) VALUES (?, ?, ?, ? ,? )`,[libro.nombre, libro.autor, libro.categoria, libro.año, libro.ISBN]);
 		res.json({"Libro Agregado": result.insertId});
-		} catch (error){ res.json({"Error": error.message});
+		} catch (error){ res.json({"Error, compruebe bien los datos a ingresar": error.message});
 
 	}
 	}
@@ -52,7 +52,7 @@ class LibroController{
 		const libro = req.body;
 		const [result] = await pool.query(`UPDATE libros SET nombre =(?), autor=(?), categoria=(?), año=(?), ISBN=(?) WHERE id=(?)`,[libro.nombre, libro.autor, libro.categoria, libro.año, libro.ISBN, libro.id]);
 		res.json({"Libros actualizados": result.changedRows});
-	} catch (error){ res.json({"Error": error.message});
+	} catch (error){ res.json({"Error en la Actualizacion de datos": error.message});
 
 }
 	
